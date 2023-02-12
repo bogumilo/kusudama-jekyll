@@ -10,7 +10,7 @@ Originally, I used GitHub Pages.
 You are expected to have [jekyll](https://jekyllrb.com) installed.
 
 ```sh
-git clone https://github.com/bogumilo/kusudama-jekyll && kusudama jekyll
+git clone https://github.com/bogumilo/kusudama-jekyll && cd kusudama-jekyll
 ```
 
 ## Usage
