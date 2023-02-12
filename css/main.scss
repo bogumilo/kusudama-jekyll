@@ -1,0 +1,71 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+
+
+// Our variables
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+
+$mega-font-size: 140px;
+$h1-font-size: 70px;
+$h2-font-size: 40px;
+$h3-font-size: 30px;
+$h4-font-size: 24px;
+
+
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #333;
+$background-color: #fefef3;
+$brand-color:      #fe5f55;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+$blue-color: #7fbab7;
+$yellow-color: #ecf442;
+$red-color: #E1314E;
+$purple-color: #610031;
+
+// Width of the content area
+$content-width:    1200px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting",
+        "gradient-bar",
+        "components/post",
+        "components/project",
+        "components/ability"
+    
+;

@@ -1,0 +1,62 @@
+.abilities {
+    list-style: none;
+    margin: 1.5em 0;
+    
+    li {
+        margin-bottom: 0.5em;
+        padding: 0.5em 1em;
+        color: #fff;
+    }
+}
+[class^="ability-"] {
+    position: relative;
+    
+    &:before,
+    &:after {
+        position: absolute;
+        content: "";
+    }
+    &:before {
+        top: 0.5em;
+        margin-left: -2em;
+        text-align: right;
+        color: #fff;
+    }
+    &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0%;
+        background: $brand-color;
+        z-index: -1;
+    }
+}
+$abilities: (
+    'photoshop': 95,
+    'illustrator': 80,
+    'ui': 70,
+    'html': 40,
+    'sass': 30,
+    'git': 30,
+    'jekyll': 100,
+);
+@each $ability, $score in $abilities {
+    @keyframes show-ability-#{$ability} {
+        from {width: 0; }
+        to { width: $score * 1%; }
+    }
+    .ability-#{$ability} {
+        &:before {
+            content: "#{$score}";
+            left: $score * 1%;
+        }
+        &:after {
+            animation: show-ability-#{$ability} ease-in-out 1s 2s 1;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+            
+            
+    
